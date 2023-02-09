@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/39b5683dea.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Convergence&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Actor&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+    <title>PuppyPals | SheCodes Challenge for December</title>
+    <style>
+      :root {
+        --primary-color: #bcdbdf;
+        --secondary-color: #40a8c4;
+        --accent-color: #ffc953;
+        --button-color: #235784;
+
+        --header-font: Convergence, Georgia, Times, "Times New Romans", serif;
+      }
+      /* Medium Screen */
+
+      @media (max-width: 990px) {
+        .logo {
+          font-size: 26px !important;
+        }
+        .nav-links {
+          padding-left: 10px !important;
+        }
+        .navbar {
+          font-size: 10px !important;
+        }
+        .furever {
+          font-size: 40px !important;
+        }
+
+        .subtitle {
+          font-size: 18px !important;
+        }
+
+        .btn-info {
+          font-size: 18px !important;
+          margin: 20px 20px 20px 0;
+        }
+
+        .btn-secondary {
+          font-size: 18px !important;
+          margin: 0 !important;
+        }
+
+        .pal-week {
+          font-size: 20px !important;
+        }
+
+        .blue-pic {
+          margin-top: 50px !important;
+        }
+
+        h3 {
+          font-size: 40px !important;
+        }
+
+        .meet-blue {
+          font-size: 16px !important;
+        }
+
+        h2 {
+          font-size: 40px !important;
+        }
+
+        .profile-pic {
+          max-width: 90% !important;
+          transition: ease-in-out 500ms !important;
+        }
+
+        .profile-pic:hover {
+          cursor: pointer !important;
+          width: 80% !important;
+        }
+
+        .name {
+          font-size: 28px !important;
+        }
+
+        .breed,
+        .age-group {
+          font-size: 18px !important;
+        }
+
+        .activity-description {
+          font-size: 18px !important;
+          margin-top: 10px !important;
+        }
+
+        .insta-header {
+          font-size: 36px !important;
+          padding-top: 0 !important;
+        }
+
+        .insta-link,
+        .insta {
+          font-size: 18px !important;
+          padding-bottom: 10px !important;
+        }
+
+        .contact {
+          font-size: 32px !important;
+        }
+
+        #email-link {
+          font-size: 32px !important;
+        }
+
+        #footer-logo {
+          font-size: 40px !important;
+        }
+      }
+
+      /* Small Screen */
+
+      @media (max-width: 660px) {
+        .logo {
+          font-size: 18px !important;
+        }
+
+        .navbar {
+          font-size: 8px !important;
+        }
+
+        .nav-links {
+          padding-left: 5px !important;
+        }
+
+        .blue-pic {
+          display: block;
+          margin: 0 auto !important;
+          margin-bottom: 20px !important;
+        }
+
+        .pal-week {
+          font-size: 16px !important;
+          text-align: center;
+        }
+
+        .divider {
+          display: block;
+          margin: 0 auto !important;
+          margin-bottom: 20px !important;
+        }
+
+        h3 {
+          font-size: 32px !important;
+        }
+
+        .name {
+          font-size: 22px !important;
+        }
+
+        .profile-pic {
+          width: 200px !important;
+        }
+
+        .breed,
+        .age-group {
+          font-size: 16px !important;
+        }
+
+        h2 {
+          font-size: 36px !important;
+        }
+
+        .activity-description {
+          margin-top: 20px !important;
+        }
+
+        .insta-header {
+          margin-top: 20px !important;
+        }
+
+        .insta-header,
+        .insta,
+        .insta-link {
+          padding-left: 0 !important;
+        }
+      }
+
+      /* Xtra Small Screen */
+
+      @media (max-width: 460px) {
+        #small-nav {
+          font-size: 6px !important;
+        }
+
+        #contact-link,
+        #home-link,
+        #about-link,
+        #explore-link {
+          padding-left: 3px !important;
+        }
+
+        .contact {
+          font-size: 24px !important;
+        }
+
+        #email-link {
+          font-size: 24px !important;
+        }
+
+        #footer-logo {
+          font-size: 36px !important;
+        }
+      }
+
+      /*Regular Screen Size */
+
+      body {
+        font-family: Actor;
+        background: rgb(188, 219, 223, 0.5);
+      }
+
+      a:hover {
+        color: var(--button-color);
+      }
+
+      /* Navigation */
+
+      .logo {
+        font-family: "Berkshire Swash";
+        padding-top: 20px;
+      }
+
+      .navbar {
+        font-family: var(--header-font);
+        font-size: 18px;
+        text-transform: uppercase;
+        padding-top: 20px;
+      }
+
+      .nav-links {
+        display: inline;
+        text-align: right;
+        padding-left: 15px;
+        text-decoration: none;
+        color: #212529;
+        list-style: none;
+      }
+
+      .nav-links:hover {
+        text-decoration: underline;
+        transition: ease-in-out;
+      }
+
+      #nav-logo {
+        font-size: 32px;
+      }
+
+      .logo-link {
+        color: #212529;
+        text-decoration: none;
+      }
+
+      /* Hero */
+
+      .hero {
+        margin: 30px 0;
+      }
+
+      .header-pic {
+        width: 550px;
+        border-radius: 2px;
+      }
+
+      .furever {
+        font-family: var(--header-font);
+        font-size: 72px;
+      }
+
+      .subtitle {
+        font-size: 26px;
+        line-height: 130%;
+      }
+
+      .btn-info {
+        padding: 5px 18px;
+        font-size: 24px;
+        font-family: var(--header-font);
+        border-radius: 10px;
+        background: #ffffff;
+        border: none;
+        margin: 20px 20px 20px 0;
+        color: var(--button-color);
+        box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.15);
+      }
+
+      .btn-secondary {
+        padding: 5px 18px;
+        font-size: 24px;
+        font-family: var(--header-font);
+        border-radius: 10px;
+        background: transparent;
+        border: var(--button-color) solid 2px;
+        margin: 20px;
+        color: var(--button-color);
+      }
+
+      /* Pal of the Week */
+
+      .pal-of-week {
+        background: var(--accent-color);
+        padding: 20px;
+        margin: 40px 0;
+        border-radius: 2px;
+      }
+
+      .pal-week {
+        text-transform: uppercase;
+        font-size: 24px;
+      }
+
+      .divider {
+        width: 300px;
+      }
+
+      h3 {
+        font-size: 56px;
+        font-family: var(--header-font);
+      }
+
+      .blue-pic {
+        width: 350px;
+        border-radius: 50px;
+        margin-top: 15px;
+      }
+
+      .meet-blue {
+        font-size: 20px;
+      }
+
+      /* Explore */
+
+      .explore-pals {
+        text-align: center;
+        font-size: 64px;
+        font-family: var(--header-font);
+        margin-bottom: 40px;
+      }
+
+      .profile-pic {
+        max-width: 90%;
+        transition: ease-in-out 500ms;
+      }
+
+      .profile-pic:hover {
+        cursor: pointer;
+        max-width: 80%;
+      }
+
+      .boy {
+        box-shadow: 10px 10px 0 rgba(43, 174, 174, 0.9);
+      }
+
+      .girl {
+        box-shadow: 10px 10px 0 rgba(222, 56, 136, 0.9);
+      }
+
+      .profile-info {
+        text-align: center;
+        margin: 20px 0 40px 0;
+      }
+
+      .name {
+        font-size: 28px;
+      }
+
+      .breed {
+        font-size: 22px;
+      }
+
+      .age-group {
+        font-size: 22px;
+      }
+
+      .explore-button {
+        display: block;
+        margin: 0 auto;
+        font-size: 32px;
+      }
+
+      /* Activities Section */
+
+      .things-to-do {
+        background: var(--secondary-color);
+        margin: 50px 0;
+        padding: 40px;
+        border-radius: 2px;
+      }
+
+      .todo-pic {
+        width: 450px;
+        border-radius: 50%;
+      }
+
+      .activity-header {
+        font-family: var(--header-font);
+        font-size: 56px;
+        margin-bottom: 40px;
+      }
+
+      .activity-description {
+        font-size: 26px;
+        margin-top: 50px;
+      }
+
+      .profile-activity {
+        padding-top: 80px;
+      }
+
+      .search-activity {
+        padding-top: 80px;
+      }
+
+      .group-activity {
+        padding-top: 60px;
+      }
+
+      .date-activity {
+        padding-top: 100px;
+      }
+
+      /* Instagram Section */
+
+      .instagram {
+        margin: 60px 0 40px 20px;
+      }
+
+      .insta-header {
+        font-family: var(--header-font);
+        font-size: 50px;
+        padding-top: 20px;
+      }
+
+      .insta {
+        font-size: 28px;
+        padding: 10px 5px 30px 0;
+      }
+
+      .insta-pic {
+        width: 675px;
+        border-radius: 2px;
+      }
+
+      .insta-link {
+        font-size: 28px;
+        color: #212529;
+        text-decoration: none;
+      }
+
+      .insta-link:hover {
+        color: #212529;
+        text-decoration: underline;
+      }
+
+      .insta,
+      .insta-header,
+      .insta-link {
+        padding-left: 20px;
+      }
+
+      /* Footer */
+
+      .footer {
+        text-align: center;
+      }
+
+      #footer-logo {
+        font-size: 48px;
+        font-family: "Berkshire Swash";
+      }
+
+      .contact {
+        margin-top: 20px;
+        font-size: 36px;
+        font-family: var(--header-font);
+      }
+
+      #email-link {
+        font-size: 36px;
+        text-decoration: none;
+        color: #212529;
+        font-family: var(--header-font);
+      }
+
+      .footer-info {
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!--Navbar-->
+
+      <div class="row">
+        <div class="col logo" id="nav-logo">
+          <a href="index.html" class="logo-link">PuppyPals</a>
+        </div>
+        <div class="col navbar" id="small-nav">
+          <ul>
+            <li class="nav-links">
+              <a href="index.html" class="nav-links" id="home-link">Home</a>
+            </li>
+            <li class="nav-links">
+              <a href="index.html#about" class="nav-links" id="about-link"
+                >About</a
+              >
+            </li>
+            <li class="nav-links">
+              <a href="index.html#explore" class="nav-links" id="explore-link"
+                >Explore</a
+              >
+            </li>
+            <li class="nav-links">
+              <a href="index.html#contact" class="nav-links" id="contact-link"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!--Hero Section-->
+
+      <div class="row hero">
+        <div class="col-md-6">
+          <h1 class="furever">Find your pup's furever friends!</h1>
+          <h2 class="subtitle">
+            Start growing your pup's friend circle. Connect with other dog
+            lovers and their pups to set up play dates and field trips.
+          </h2>
+          <button type="button" class="btn btn-info">get started ></button>
+          <button type="button" class="btn btn-secondary">learn more ></button>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/058/356/original/camilo-fierro-z7rcwqCi77s-unsplash.jpg?1670961061"
+            class="header-pic img-fluid"
+          />
+        </div>
+      </div>
+
+      <!--Pal of the Week-->
+
+      <div class="row pal-of-week">
+        <div class="col-md-5">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/058/360/original/meet-blue.jpg?1670961510"
+            class="blue-pic img-fluid"
+          />
+        </div>
+        <div class="col-md-7">
+          <h2 class="pal-week">Our Pal of the Week</h2>
+          <hr class="divider" />
+          <h3>Meet Blue!</h3>
+          <p class="meet-blue">
+            At 3 years old, Blue the cocker spaniel falls into our "Young Adult"
+            age group. Blue lives in Houston, TX with his dog mama, Elizabeth.
+            Although Blue is only 20 lbs. small, he loves to play with the big
+            boys!
+          </p>
+          <button type="button" class="btn btn-info">
+            see blue's profile >
+          </button>
+        </div>
+      </div>
+
+      <!--Explore More Dogs-->
+
+      <h2 class="explore-pals" id="explore">Explore more potential pals!</h2>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 text-center">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/058/357/original/t-r-photography-TzjMd7i5WQI-unsplash.jpg?1670961073"
+            class="profile-pic girl"
+          />
+          <p class="profile-info">
+            <span class="name">NUTMEG</span>
+            <br />
+            <span class="breed">Cavalier Spaniel</span>
+            <br />
+            <span class="age-group">Puppy</span>
+          </p>
+        </div>
+
+        <div class="col-lg-3 col-md-6 text-center">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/058/354/original/baptist-standaert-mx0DEnfYxic-unsplash.jpg?1670960942"
+            class="profile-pic girl"
+          />
+          <p class="profile-info">
+            <span class="name">LUNA</span>
+            <br />
+            <span class="breed">Border Collie</span>
+            <br />
+            <span class="age-group">Young Adult</span>
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/058/414/original/victor-grabarczyk-2pbnDRhXc6Q-unsplash.jpg?1670970684"
+            class="profile-pic boy"
+          />
+          <p class="profile-info">
+            <span class="name">HERSHEY</span>
+            <br />
+            <span class="breed">Labrador Mix</span>
+            <br />
+            <span class="age-group">Young Adult</span>
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/058/352/original/herbert-goetsch-Wpixq0Z1dfo-unsplash.jpg?1670960915"
+            class="profile-pic boy"
+          />
+          <p class="profile-info">
+            <span class="name">PIPSQUEAK</span>
+            <br />
+            <span class="breed">Pomeranian-Papillon Mix</span>
+            <br />
+            <span class="age-group">Mature Adult</span>
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/058/465/original/charlesdeluvio-Mv9hjnEUHR4-unsplash.jpg?1670981445"
+            class="profile-pic boy"
+          />
+          <p class="profile-info">
+            <span class="name">HUGO</span>
+            <br />
+            <span class="breed">French Bulldog</span>
+            <br />
+            <span class="age-group">Senior</span>
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/058/415/original/pauline-loroy-U3aF7hgUSrk-unsplash.jpg?1670970694"
+            class="profile-pic girl"
+          />
+          <p class="profile-info">
+            <span class="name">MAGGIE</span>
+            <br />
+            <span class="breed">Australian Shepherd Mix</span>
+            <br />
+            <span class="age-group">Young Adult</span>
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/058/353/original/clarke-sanders-nM4gJR-7RWQ-unsplash.jpg?1670960929"
+            class="profile-pic boy"
+          />
+          <p class="profile-info">
+            <span class="name">BEAU</span>
+            <br />
+            <span class="breed">Boxer</span>
+            <br />
+            <span class="age-group">Senior</span>
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/058/466/original/kieran-white-NKN25UfGfkQ-unsplash.jpg?1670981508"
+            class="profile-pic girl"
+          />
+          <p class="profile-info">
+            <span class="name">RIVER</span>
+            <br />
+            <span class="breed">Husky</span>
+            <br />
+            <span class="age-group">Mature Adult</span>
+          </p>
+        </div>
+      </div>
+      <button type="button" class="btn btn-info explore-button">
+        see all dogs >
+      </button>
+
+      <!--Things To Do Section-->
+      <div class="things-to-do" id="about">
+        <div class="row">
+          <div class="col-sm-10">
+            <h2 class="activity-header">
+              On PuppyPals, there is so much for you to explore!
+            </h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <img
+              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/058/412/original/bruce-warrington-WSAOGHKEqFc-unsplash.jpg?1670970673"
+              class="todo-pic img-fluid"
+            />
+          </div>
+          <div class="col-sm-6">
+            <ul class="activity-description">
+              <li>Build a profile for your own pup.</li>
+              <li>
+                Browse potential pals by breed, size, age, location, energy
+                level, and many more preferences.
+              </li>
+              <li>
+                Find group meet-ups in your area! Join up for park visits, group
+                hikes, and shopping trips.
+              </li>
+              <li>
+                Reach out to other owners to schedule one-on-one play dates for
+                your pups.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--Instagram Section-->
+
+      <div class="row instagram">
+        <div class="col-sm-6">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/058/351/original/alvan-nee-T-0EW-SEbsE-unsplash.jpg?1670960610"
+            class="insta-pic img-fluid"
+          />
+        </div>
+        <div class="col-sm-6">
+          <h2 class="insta-header">Check us out on Instagram!</h2>
+          <p class="insta">
+            Share your pup's play dates with us and see what other pals are
+            doing!
+          </p>
+          <a href="#" class="insta-link">@puppypalsfurever</a>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <hr />
+      <div class="footer" id="contact">
+        <h4 class="contact">Have a question? Contact us!</h4>
+        <a href="mailto:puppypals@gmail.com" id="email-link"
+          >📧 puppypals@gmail.com</a
+        >
+
+        <br /><br /><br />
+        <p id="footer-logo">PuppyPals</p>
+        <p class="footer-info">Coded by Elizabeth King</p>
+      </div>
+    </div>
+  </body>
+</html>
